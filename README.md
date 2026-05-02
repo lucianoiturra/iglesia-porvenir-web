@@ -23,18 +23,6 @@ npm run dev     # desarrollo en localhost:4321
 npm run build   # build de producción en /dist
 npm run preview # previsualizar el build
 ```
-
-**Variables de entorno opcionales** (YouTube API):
-
-```env
-PUBLIC_YOUTUBE_API_KEY=...
-PUBLIC_YOUTUBE_CHANNEL_ID=...
-```
-
-Sin estas variables el embed de YouTube funciona igual, pero sin la grilla de videos recientes.
-
----
-
 ## Cómo funciona
 
 Sitio estático generado con Astro (SSG). Las páginas se renderizan en el servidor y los componentes React interactivos se hidratan en el cliente con `client:load`.
