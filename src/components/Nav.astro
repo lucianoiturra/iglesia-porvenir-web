@@ -1,0 +1,131 @@
+---
+const pathname = Astro.url.pathname;
+const isHome = pathname === '/';
+
+const navLinks = [
+  { label: 'El Proyecto', href: isHome ? '#salas' : '/#salas' },
+  { label: 'Galería', href: '/galeria' },
+  { label: 'En Vivo', href: '/transmisiones' },
+  { label: 'Nosotros', href: '/nosotros' },
+  { label: 'Contacto', href: '/contacto' },
+];
+---
+
+<nav
+  id="navbar"
+  class="fixed top-0 left-0 right-0 z-50 bg-[#0D1F2D] border-b border-white/[0.07] transition-shadow duration-300"
+  role="banner"
+  aria-label="Navegación principal"
+>
+  <div class="max-w-[1180px] mx-auto px-6 h-16 flex items-center justify-between">
+    <!-- Brand -->
+    <a
+      href="/"
+      class="flex items-center gap-3 no-underline group"
+      aria-label="Iglesia Adventista Porvenir - inicio"
+    >
+      <img src="/logo-blanco.svg" alt="Logo Iglesia Adventista" class="h-11 w-auto opacity-90 group-hover:opacity-100 transition-opacity" />
+      <span
+        class="text-sm font-medium text-white/85 leading-snug hidden sm:block group-hover:text-white transition-colors"
+      >
+        Iglesia Adventista<br />Porvenir
+      </span>
+    </a>
+
+    <!-- Desktop nav links -->
+    <nav aria-label="Menú principal" class="hidden md:flex items-center gap-1">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class:list={[
+            'px-4 py-2 rounded-md text-sm font-medium transition-colors',
+            'text-white/75 hover:text-white hover:bg-white/10',
+            pathname === link.href && 'text-white bg-white/10',
+          ]}
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <!-- Actions -->
+    <div class="flex items-center gap-3">
+      <a
+        href="/#donar"
+        class="bg-[#1A78C2] hover:bg-[#1567AA] text-white text-sm font-semibold px-5 py-2 rounded-md transition-colors"
+      >
+        Quiero donar
+      </a>
+      <!-- Mobile hamburger -->
+      <button
+        id="ham-btn"
+        class="md:hidden flex flex-col gap-1.5 p-2 rounded-md hover:bg-white/10 transition-colors"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="mob-menu"
+      >
+        <span class="block w-5 h-0.5 bg-white transition-transform duration-200"></span>
+        <span class="block w-5 h-0.5 bg-white transition-opacity duration-200"></span>
+        <span class="block w-5 h-0.5 bg-white transition-transform duration-200"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div
+    id="mob-menu"
+    class="md:hidden hidden bg-[#0D1F2D] border-t border-white/10"
+    role="navigation"
+    aria-label="Menú móvil"
+  >
+    <ul class="flex flex-col py-3 px-4">
+      {navLinks.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            class="block px-3 py-3 text-white/80 hover:text-white hover:bg-white/10 rounded-md transition-colors"
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+      <li class="mt-2 pt-2 border-t border-white/10">
+        <a
+          href="/#donar"
+          class="block px-3 py-3 text-[#93C5FD] font-semibold hover:text-white transition-colors"
+        >
+          Quiero donar →
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  const btn = document.getElementById('ham-btn');
+  const menu = document.getElementById('mob-menu');
+  const spans = btn?.querySelectorAll('span');
+
+  btn?.addEventListener('click', () => {
+    const isOpen = menu?.classList.toggle('hidden') === false;
+    btn.setAttribute('aria-expanded', String(isOpen));
+    if (spans) {
+      spans[0].style.transform = isOpen ? 'rotate(45deg) translateY(8px)' : '';
+      spans[1].style.opacity = isOpen ? '0' : '1';
+      spans[2].style.transform = isOpen ? 'rotate(-45deg) translateY(-8px)' : '';
+    }
+  });
+
+  // Close on link click
+  menu?.querySelectorAll('a').forEach((a) => {
+    a.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      btn?.setAttribute('aria-expanded', 'false');
+      if (spans) {
+        spans[0].style.transform = '';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = '';
+      }
+    });
+  });
+</script>

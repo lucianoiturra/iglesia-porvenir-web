@@ -1,0 +1,156 @@
+---
+import Layout from '@/layouts/Layout.astro';
+---
+
+<Layout
+  title="Quiénes Somos — Iglesia Adventista Porvenir"
+  description="Conocé la historia y misión de la Iglesia Adventista del Séptimo Día, Comunidad Porvenir, Santiago."
+>
+  <!-- Hero -->
+  <div class="bg-[#003366] text-white py-20 px-6">
+    <div class="max-w-[1180px] mx-auto text-center">
+      <span class="eyebrow" style="color: #93C5FD">Nuestra comunidad</span>
+      <h1 class="text-4xl sm:text-5xl font-black mt-3 mb-4">Iglesia Adventista Porvenir</h1>
+      <p class="text-white/70 max-w-2xl mx-auto leading-relaxed text-lg">
+        Una comunidad de fe comprometida con Dios, la familia y las nuevas generaciones,
+        ubicada en el barrio Porvenir de Santiago.
+      </p>
+    </div>
+  </div>
+
+  <!-- Historia -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <div class="reveal">
+          <span class="eyebrow">Nuestra historia</span>
+          <h2 class="text-3xl font-bold text-[#003366] mt-2 mb-4">Décadas de historia en el barrio</h2>
+          <p class="text-[#6B7280] leading-relaxed mb-4">
+            La Iglesia Adventista del Séptimo Día, Comunidad Porvenir, lleva décadas siendo un pilar espiritual en su barrio de Santiago.
+            Desde sus primeros años, la congregación ha crecido en número y en compromiso con las nuevas generaciones,
+            formando a cientos de niños y jóvenes en los valores del Evangelio.
+          </p>
+          <p class="text-[#6B7280] leading-relaxed">
+            Hoy somos una comunidad activa que se reúne cada sábado para adorar juntos, estudiar la Biblia y
+            servir a nuestra comunidad local y regional.
+          </p>
+        </div>
+        <div class="reveal reveal-d1 rounded-xl bg-[#E2EAF5] aspect-video flex flex-col items-center justify-center gap-3 text-[#64748B]">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="48" height="48" aria-hidden="true">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+          <p class="text-sm text-center px-8">Foto histórica próximamente</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Las salas actuales -->
+  <section class="section bg-[#F5F5F5]">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">La necesidad</span>
+        <h2 class="text-3xl font-bold text-[#003366]">Nuestras salas actuales</h2>
+        <p>A pesar de no contar con espacios propios, seguimos enseñando con amor a nuestras nuevas generaciones en instalaciones prestadas que adaptamos cada sábado.</p>
+      </div>
+      <div class="space-y-12">
+        {[
+          { title: 'Bebés y Principiantes', folder: '01-bebes-y-principiantes', count: 3 },
+          { title: 'Infante', folder: '02-infante', count: 5 },
+          { title: 'Primarios', folder: '03-primarios', count: 4 },
+          { title: 'Intermediarios', folder: '04-intermediarios', count: 4 },
+          { title: 'G-Teen', folder: '05-gteen', count: 5 },
+          { title: 'Jóvenes', folder: '06-jovenes', count: 5 }
+        ].map((cat) => (
+          <div class="reveal">
+            <h3 class="text-xl font-bold text-[#003366] mb-4 border-b border-[#E5E7EB] pb-2">{cat.title}</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+              {Array.from({ length: cat.count }).map((_, i) => (
+                <div class="aspect-square rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow">
+                  <img 
+                    src={`/images/salas_actuales/${cat.folder}/img${i + 1}.jpg`} 
+                    alt={`Sala ${cat.title} - Foto ${i + 1}`} 
+                    class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
+                    loading="lazy" 
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Misión y valores -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Quiénes somos</span>
+        <h2 class="text-3xl font-bold text-[#003366]">Misión y valores</h2>
+        <p>Vivimos nuestra fe en comunidad, comprometidos con el crecimiento espiritual de cada persona que nos visita.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        {[
+          {
+            icon: `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>`,
+            titulo: 'Fe bíblica',
+            desc: 'Fundamentamos nuestra vida en las Escrituras y los principios adventistas de salud, familia y servicio.',
+          },
+          {
+            icon: `<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>`,
+            titulo: 'Comunidad',
+            desc: 'Somos una familia que se cuida mutuamente, celebra los logros de todos y se apoya en los momentos difíciles.',
+          },
+          {
+            icon: `<path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z"/><path d="M12 8v4l3 3"/>`,
+            titulo: 'Misión constante',
+            desc: 'Estamos comprometidos con el servicio a nuestra comunidad local y con la tarea de compartir el mensaje del Evangelio.',
+          },
+        ].map((item, i) => (
+          <div class={`reveal reveal-d${i + 1} bg-white rounded-xl p-8 shadow-[0_4px_24px_rgba(0,51,102,0.07)] border border-[#E5E7EB]`}>
+            <div class="w-12 h-12 rounded-xl bg-[#003366]/10 flex items-center justify-center mb-4">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#003366" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" aria-hidden="true">
+                <Fragment set:html={item.icon} />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-[#003366] mb-2">{item.titulo}</h3>
+            <p class="text-sm text-[#6B7280] leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Horarios -->
+  <section class="section bg-[#F5F5F5]">
+    <div class="container max-w-2xl">
+      <div class="section-header reveal">
+        <span class="eyebrow">Estás invitado</span>
+        <h2 class="text-3xl font-bold text-[#003366]">Horarios de reuniones</h2>
+        <p>Te esperamos cada semana en nuestras actividades. Todos son bienvenidos.</p>
+      </div>
+      <div class="reveal space-y-3">
+        {[
+          { dia: 'Sábado', hora: '09:30 – 12:30 h', actividad: 'Culto principal + Escuela Sabática' },
+          { dia: 'Sábado', hora: '09:30 – 10:00 h', actividad: 'Escuela Sabática de niños y jóvenes' },
+          { dia: 'Sábado', hora: '18:30 – 20:00 h', actividad: 'Maranata Adoración' },
+          { dia: 'Miércoles', hora: '19:30 h', actividad: 'Culto de oración y estudio bíblico' },
+        ].map((item) => (
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-5 rounded-xl border border-[#E5E7EB] hover:border-[#1A78C2] transition-colors">
+            <div>
+              <span class="text-xs font-semibold uppercase tracking-wider text-[#1A78C2]">{item.dia}</span>
+              <p class="font-semibold text-[#003366] mt-0.5">{item.actividad}</p>
+            </div>
+            <span class="text-sm font-medium text-[#6B7280] bg-[#F5F5F5] px-3 py-1.5 rounded-full whitespace-nowrap">{item.hora}</span>
+          </div>
+        ))}
+      </div>
+      <div class="reveal mt-8 p-5 rounded-xl bg-[#003366] text-white">
+        <p class="text-sm font-medium text-[#93C5FD] mb-1">Dirección</p>
+        <p class="font-semibold">Porvenir 36, Santiago, Región Metropolitana</p>
+      </div>
+    </div>
+  </section>
+</Layout>

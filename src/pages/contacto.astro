@@ -1,0 +1,158 @@
+---
+import Layout from '@/layouts/Layout.astro';
+
+const socialLinks = [
+  {
+    name: 'Facebook',
+    handle: 'iglesia.porvenir.587',
+    href: 'https://www.facebook.com/iglesia.porvenir.587',
+    color: '#1877F2',
+    desc: 'Seguí nuestras noticias y eventos en Facebook',
+    icon: `<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>`,
+  },
+  {
+    name: 'Instagram',
+    handle: 'iasdporvenir.amch',
+    href: 'https://www.instagram.com/iasdporvenir.amch',
+    color: '#E1306C',
+    desc: 'Fotos y momentos de nuestra comunidad',
+    icon: `<rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>`,
+  },
+  {
+    name: 'YouTube',
+    handle: '@IASDPorvenirAMCH',
+    href: 'https://www.youtube.com/@IASDPorvenirAMCH',
+    color: '#FF0000',
+    desc: 'Transmisiones en vivo e historial de cultos',
+    icon: `<path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/>`,
+  },
+];
+---
+
+<Layout
+  title="Contacto — Iglesia Adventista Porvenir"
+  description="Contactá a la Iglesia Adventista del Séptimo Día Porvenir. Seguinos en Facebook, Instagram y YouTube."
+>
+  <!-- Hero -->
+  <div class="bg-[#003366] text-white py-20 px-6">
+    <div class="max-w-[1180px] mx-auto text-center">
+      <span class="eyebrow" style="color: #93C5FD">Estamos acá</span>
+      <h1 class="text-4xl sm:text-5xl font-black mt-3 mb-4">Contacto</h1>
+      <p class="text-white/70 max-w-xl mx-auto leading-relaxed">
+        Encontranos en las redes sociales o visitanos en persona.
+        Estamos felices de conocerte.
+      </p>
+    </div>
+  </div>
+
+  <!-- Redes sociales -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Conectate</span>
+        <h2 class="text-3xl font-bold text-[#003366]">Seguinos en redes</h2>
+        <p>Estamos activos en Facebook, Instagram y YouTube. Seguinos para no perderte ningún evento o transmisión.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        {socialLinks.map((social, i) => (
+          <a
+            href={social.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class={`reveal reveal-d${i + 1} group block rounded-2xl border border-[#E5E7EB] p-8 hover:shadow-[0_8px_40px_rgba(0,51,102,0.12)] hover:-translate-y-1 transition-all`}
+            aria-label={`Ir a ${social.name}`}
+          >
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={`background: ${social.color}18`}>
+              <svg viewBox="0 0 24 24" fill="none" stroke={social.color} stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" aria-hidden="true">
+                <Fragment set:html={social.icon} />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-[#003366] mb-1">{social.name}</h3>
+            <p class="text-sm font-medium mb-2" style={`color: ${social.color}`}>@{social.handle.replace('@', '')}</p>
+            <p class="text-sm text-[#6B7280] leading-relaxed mb-4">{social.desc}</p>
+            <span class="inline-flex items-center gap-1 text-sm font-semibold" style={`color: ${social.color}`}>
+              Seguir
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Información de contacto -->
+  <section class="section bg-[#F5F5F5]">
+    <div class="container max-w-3xl">
+      <div class="section-header reveal">
+        <span class="eyebrow">Visitanos</span>
+        <h2 class="text-3xl font-bold text-[#003366]">Dónde encontrarnos</h2>
+      </div>
+      <div class="reveal grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <!-- Address -->
+        <div class="bg-white rounded-xl p-6 border border-[#E5E7EB]">
+          <div class="flex items-start gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-[#003366]/10 flex items-center justify-center shrink-0">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#003366" stroke-width="1.5" width="20" height="20" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-[#003366] mb-1">Dirección</h3>
+              <p class="text-sm text-[#6B7280] leading-relaxed">
+                Porvenir 36<br />
+                Santiago, Región Metropolitana<br />
+                Chile
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="bg-white rounded-xl p-6 border border-[#E5E7EB]">
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-lg bg-[#003366]/10 flex items-center justify-center shrink-0">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#003366" stroke-width="1.5" width="20" height="20" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-[#003366] mb-1">Tesorería (donaciones)</h3>
+              <a href="mailto:tesoreriaporvenir@hotmail.com" class="text-sm text-[#1A78C2] hover:underline break-all">
+                tesoreriaporvenir@hotmail.com
+              </a>
+              <p class="text-xs text-[#6B7280] mt-1">Para envío de comprobantes de transferencia</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Horarios -->
+      <div class="reveal mt-6 bg-white rounded-xl p-6 border border-[#E5E7EB]">
+        <h3 class="font-bold text-[#003366] mb-4">Horarios de culto</h3>
+        <div class="space-y-2">
+          {[
+            { dia: 'Sábado 9:30 h', act: 'Escuela Sabática de niños y jóvenes' },
+            { dia: 'Sábado 9:30 h', act: 'Culto principal y Escuela Sabática' },
+            { dia: 'Sábado 18:30 h', act: 'Maranata Adoración' },
+            { dia: 'Miércoles 19:30 h', act: 'Culto de oración y estudio bíblico' },
+          ].map((h) => (
+            <div class="flex flex-col sm:flex-row gap-1 sm:gap-4 text-sm">
+              <span class="font-semibold text-[#1A78C2] shrink-0">{h.dia}</span>
+              <span class="text-[#6B7280]">{h.act}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="reveal mt-8 text-center">
+        <a
+          href="/#donar"
+          class="inline-flex items-center gap-2 bg-[#003366] hover:bg-[#1A78C2] text-white font-semibold px-8 py-4 rounded-lg transition-colors"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          Donar al proyecto Nuevas Generaciones
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,73 @@
+---
+---
+<section
+  id="hero"
+  class="relative min-h-[92vh] flex items-center overflow-hidden"
+  aria-labelledby="hero-title"
+>
+  <!-- Background -->
+  <div
+    class="absolute inset-0 bg-cover bg-center"
+    style="background-image: url('/images/renders/Imagen 1 - Entrada.jpg'); animation: heroBg 7s ease forwards;"
+    role="img"
+    aria-label="Entrada del futuro edificio de salas"
+  ></div>
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-b from-[#0D1F2D]/80 via-[#0D1F2D]/60 to-[#0D1F2D]/85"></div>
+
+  <div class="relative z-10 w-full max-w-[1180px] mx-auto px-6 py-20 text-white">
+    <!-- Badge -->
+    <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8 text-sm font-medium">
+      <span class="pulse-dot"></span>
+      Iglesia Adventista Porvenir
+    </div>
+
+    <!-- Headline -->
+    <h1
+      id="hero-title"
+      class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6 max-w-3xl"
+      style="text-shadow: 0 2px 20px rgba(0,0,0,0.4)"
+    >
+      Proyecto para las<br />
+      <em class="not-italic text-[#93C5FD]">Nuevas Generaciones</em>
+    </h1>
+
+    <p class="text-lg text-white/80 max-w-xl leading-relaxed mb-10">
+      Ayúdanos a construir 7 salas donde los niños
+      y jóvenes de Porvenir puedan crecer, aprender y vivir su fe.
+    </p>
+
+    <!-- CTAs -->
+    <div class="flex flex-wrap gap-4 mb-12">
+      <a
+        href="#donar"
+        class="inline-flex items-center gap-2 bg-[#1A78C2] hover:bg-[#1567AA] text-white font-semibold px-8 py-4 rounded-lg text-base transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(26,120,194,0.4)]"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        Quiero apoyar este proyecto
+      </a>
+      <a
+        href="#salas"
+        class="inline-flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 text-white font-semibold px-8 py-4 rounded-lg text-base transition-all backdrop-blur-sm"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        Ver el proyecto
+      </a>
+    </div>
+
+    <!-- Pills stats -->
+    <div class="flex flex-wrap gap-3" role="list" aria-label="Estadísticas del proyecto">
+      {[['7', 'salas'], ['+90', 'niños y jóvenes'], ['2', 'pisos'], ['222 m²', 'construidos']].map(([val, lbl]) => (
+        <div role="listitem" class="bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-sm">
+          <strong class="font-bold">{val}</strong> <span class="text-white/75">{lbl}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Scroll hint -->
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-white/50 text-xs animate-bounce" aria-hidden="true">
+    <span>descubrir</span>
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  </div>
+</section>

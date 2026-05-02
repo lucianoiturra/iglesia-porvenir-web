@@ -1,0 +1,52 @@
+---
+import { PROYECTO } from '@/data/salas';
+---
+<section id="historia-avance" class="section bg-[#F5F5F5]" aria-labelledby="ha-title">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">Conoce más</span>
+      <h2 id="ha-title">La Iglesia Porvenir y su proyecto</h2>
+      <p>Nuestra historia y el avance de la obra que transforma sueños en realidad.</p>
+    </div>
+
+    <!-- Historia -->
+    <div class="space-y-16">
+      <div class="reveal grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div>
+          <span class="eyebrow">Nuestros inicios</span>
+          <h3 class="text-2xl font-bold text-[#003366] mt-2 mb-4">Una comunidad con historia</h3>
+          <p class="text-[#6B7280] leading-relaxed">
+            La Iglesia Adventista del Séptimo Día, Comunidad Porvenir, lleva décadas siendo un pilar espiritual en su barrio de Santiago.
+            Desde sus primeros años, la congregación ha crecido en número y en compromiso con las nuevas generaciones,
+            formando a cientos de niños y jóvenes en los valores del Evangelio.
+          </p>
+        </div>
+        <div class="rounded-xl bg-[#E2EAF5] aspect-video flex flex-col items-center justify-center gap-3 text-[#64748B]">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="40" height="40" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <p class="text-sm text-center px-6">Foto histórica próximamente</p>
+        </div>
+      </div>
+
+      <div class="reveal grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div class="rounded-xl bg-[#E2EAF5] aspect-video overflow-hidden order-2 md:order-1">
+          <img src="/images/salas_actuales/03-primarios/img3.jpg" alt="Niños en las instalaciones actuales" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="order-1 md:order-2">
+          <span class="eyebrow">Las nuevas generaciones hoy</span>
+          <h3 class="text-2xl font-bold text-[#003366] mt-2 mb-4">Más de 90 niños sin un lugar propio</h3>
+          <p class="text-[#6B7280] leading-relaxed">
+            Hoy, cada sábado, los más de 100 niños y jóvenes de la Comunidad Porvenir se reúnen en instalaciones prestadas del colegio adyacente.
+            Sin un espacio propio, sin identidad, sin la permanencia que merecen.
+            Este proyecto busca cambiar eso para siempre.
+          </p>
+        </div>
+      </div>
+
+      {PROYECTO.avances.length === 0 && (
+        <div class="reveal text-center py-12 rounded-xl border border-dashed border-[#E5E7EB] bg-white">
+          <p class="text-[#94A3B8]">Los avances de obra se publicarán aquí a medida que avance el proyecto.</p>
+        </div>
+      )}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import ImageGallery from '@/components/ImageGallery';
+---
+
+<Layout
+  title="Galería de Renders — Proyecto Nuevas Generaciones"
+  description="Explorá todos los renders del proyecto de remodelación de la Iglesia Adventista Porvenir: salas, baños, entrada y espacios comunes."
+>
+  <div class="section bg-white">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Así se verá</span>
+        <h1 class="text-4xl font-black text-[#003366] mb-4">Galería completa</h1>
+        <p>
+          Explorá todos los renders del proyecto. Hacé clic en cualquier imagen para verla en tamaño completo con zoom.
+          Filtrá por categoría para encontrar los espacios que te interesan.
+        </p>
+      </div>
+      <ImageGallery client:load />
+    </div>
+  </div>
+</Layout>

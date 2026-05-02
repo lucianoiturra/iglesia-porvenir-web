@@ -1,0 +1,68 @@
+---
+import { PROYECTO } from '@/data/salas';
+
+const pctRecaudado = Math.min(100, Math.round((PROYECTO.montoRecaudado / PROYECTO.metaTotal) * 100));
+
+function formatCLP(n: number) {
+  return new Intl.NumberFormat('es-CL').format(n);
+}
+---
+<section id="presupuesto" class="section bg-white" aria-labelledby="pres-title">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">El costo del proyecto</span>
+      <h2 id="pres-title">¿Cuánto cuesta y en qué se usa el dinero?</h2>
+      <p>Aquí explicamos en términos simples cómo se distribuye el presupuesto del proyecto.</p>
+    </div>
+
+    <!-- Progress box -->
+    <div class="reveal bg-[#003366] rounded-2xl p-8 mb-10 text-white">
+      <p class="text-sm font-semibold text-[#93C5FD] uppercase tracking-wider mb-4">Meta de recaudación</p>
+      <div class="flex flex-wrap items-baseline gap-2 mb-4">
+        <span class="text-3xl font-black text-white">${formatCLP(PROYECTO.montoRecaudado)}</span>
+        <span class="text-lg text-white/50">/</span>
+        <span class="text-lg text-white/70">${formatCLP(PROYECTO.metaTotal)} CLP</span>
+      </div>
+      <div
+        class="h-3 bg-white/20 rounded-full overflow-hidden mb-3"
+        role="progressbar"
+        aria-valuenow={pctRecaudado}
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-label="Progreso de recaudación"
+      >
+        <div
+          class="h-full rounded-full bg-gradient-to-r from-[#1A78C2] to-[#93C5FD] pbar-fill"
+          style={`--target-width: ${pctRecaudado}%`}
+        ></div>
+      </div>
+      <p class="text-sm text-white/60">{pctRecaudado}% recaudado</p>
+    </div>
+
+    <!-- Cost cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {PROYECTO.costos.map((costo, i) => (
+        <div class={`reveal reveal-d${(i % 4) + 1} rounded-xl border border-[#E5E7EB] p-6 hover:shadow-[0_4px_24px_rgba(0,51,102,0.09)] transition-shadow`}>
+          <h4 class="text-sm font-bold text-[#003366] mb-2">{costo.titulo}</h4>
+          <p class="text-xs text-[#6B7280] mb-4 leading-relaxed">{costo.desc}</p>
+          <p class="text-xl font-black text-[#1A78C2]">${formatCLP(costo.monto)}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-6 p-4 rounded-xl bg-[#F5F5F5] border border-[#E5E7EB] text-center">
+      <p class="font-bold text-[#003366]">Total del proyecto: <span class="text-2xl">${formatCLP(PROYECTO.metaTotal)} CLP</span></p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .pbar-fill {
+    width: 0;
+    animation: fillBar 1.6s cubic-bezier(0.25, 1, 0.5, 1) 0.5s forwards;
+  }
+
+  @keyframes fillBar {
+    to { width: var(--target-width); }
+  }
+</style>

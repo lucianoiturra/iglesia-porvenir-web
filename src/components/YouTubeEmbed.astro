@@ -1,0 +1,29 @@
+---
+interface Props {
+  list?: string;
+  videoId?: string;
+  className?: string;
+}
+
+const { 
+  list, 
+  videoId, 
+  className = "w-full max-w-2xl rounded-xl overflow-hidden aspect-video" 
+} = Astro.props;
+
+const src = list
+  ? `https://www.youtube.com/embed?listType=playlist&list=${list}&rel=0`
+  : `https://www.youtube.com/embed/${videoId}?rel=0`;
+---
+
+<div class={className}>
+  <iframe
+    src={src}
+    title="Canal YouTube Iglesia Adventista Porvenir"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+    class="w-full h-full"
+    loading="lazy"
+  ></iframe>
+</div>
