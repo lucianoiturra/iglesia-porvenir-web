@@ -14,14 +14,28 @@ interface GalleryImage {
 
 const images: GalleryImage[] = [
   { src: '/images/renders/Imagen 1 - Entrada.jpg', alt: 'Entrada principal del complejo', caption: 'Entrada principal al complejo de salas', category: 'Exterior' },
+  { src: '/images/renders/magnific__enhance__17105.png', alt: 'Vista general del proyecto', caption: 'Vista general del proyecto', category: 'Exterior' },
   { src: '/images/renders/Sala bebes.png', alt: 'Sala de Bebés', caption: 'Sala de Bebés (0-12 meses)', category: 'Salas' },
+  { src: '/images/renders/magnific__enhance__49.png', alt: 'Sala de Bebés — vista 2', caption: 'Sala de Bebés (0-12 meses) — vista 2', category: 'Salas' },
   { src: '/images/renders/Imagen 3 - Sala principiantes.jpg', alt: 'Sala de Principiantes', caption: 'Sala Principiantes (1-3 años)', category: 'Salas' },
+  { src: '/images/renders/magnific__enhance__17101.png', alt: 'Sala Principiantes — vista 2', caption: 'Sala Principiantes (1-3 años) — vista 2', category: 'Salas' },
+  { src: '/images/renders/magnific__enhance__17102.png', alt: 'Sala Principiantes — vista 3', caption: 'Sala Principiantes (1-3 años) — vista 3', category: 'Salas' },
+  { src: '/images/renders/magnific__enhance__17103.png', alt: 'Sala Principiantes — vista 4', caption: 'Sala Principiantes (1-3 años) — vista 4', category: 'Salas' },
   { src: '/images/renders/Sala infantes.png', alt: 'Sala Infantes', caption: 'Sala Infantes (4-6 años)', category: 'Salas' },
+  { src: '/images/renders/magnific__enhance__50.png', alt: 'Sala Infantes — vista 2', caption: 'Sala Infantes (4-6 años) — vista 2', category: 'Salas' },
+  { src: '/images/renders/magnific__enhance__51.png', alt: 'Sala Infantes — vista 3', caption: 'Sala Infantes (4-6 años) — vista 3', category: 'Salas' },
   { src: '/images/renders/Sala priomarios.png', alt: 'Sala Primarios', caption: 'Sala Primarios (7-9 años)', category: 'Salas' },
   { src: '/images/renders/Sala intermediarios.png', alt: 'Sala Intermediarios', caption: 'Sala Intermediarios (10-12 años)', category: 'Salas' },
+  { src: '/images/renders/magnific__enhance__52.png', alt: 'Sala Intermediarios — vista 2', caption: 'Sala Intermediarios (10-12 años) — vista 2', category: 'Salas' },
+  { src: '/images/renders/magnific__enhance__53.png', alt: 'Sala Intermediarios — vista 3', caption: 'Sala Intermediarios (10-12 años) — vista 3', category: 'Salas' },
   { src: '/images/renders/Imagen 2 - Sala Gteen.jpg', alt: 'Sala Gteen', caption: 'Sala Gteen (13-15 años)', category: 'Salas' },
+  { src: '/images/renders/magnific__enhance__17104.png', alt: 'Sala Gteen — vista 2', caption: 'Sala Gteen (13-15 años) — vista 2', category: 'Salas' },
+  { src: '/images/renders/magnific__enhance__47.png', alt: 'Sala Gteen — vista 3', caption: 'Sala Gteen (13-15 años) — vista 3', category: 'Salas' },
   { src: '/images/renders/Sala jovenes.png', alt: 'Sala de Jóvenes', caption: 'Sala de Jóvenes (16-25 años)', category: 'Salas' },
   { src: '/images/renders/Imagen 4 - Baño.jpg', alt: 'Baño accesible con mudador', caption: 'Baño accesible con mudador de bebés', category: 'Servicios' },
+  { src: '/images/renders/magnific__enhance__17098.png', alt: 'Baño accesible — vista 2', caption: 'Baño accesible — vista 2', category: 'Servicios' },
+  { src: '/images/renders/magnific__enhance__17099.png', alt: 'Baño accesible — vista 3', caption: 'Baño accesible — vista 3', category: 'Servicios' },
+  { src: '/images/renders/magnific__enhance__17100.png', alt: 'Baño accesible — vista 4', caption: 'Baño accesible — vista 4', category: 'Servicios' },
 ];
 
 const categories = ['Todos', 'Exterior', 'Salas', 'Servicios'];

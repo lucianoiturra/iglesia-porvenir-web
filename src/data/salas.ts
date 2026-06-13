@@ -46,7 +46,7 @@ export const SALAS: Sala[] = [
     img: '/images/renders/Imagen 3 - Sala principiantes.jpg',
     color: '#D1FAE5',
     iconColor: '#059669',
-    desc: 'La sala más grande del primer piso fue diseñada para los niños que dan sus primeros pasos en la fe. Con espacio para 15 niños y 3 maestros, ofrece un ambiente cálido y estimulante a escala infantil, con todo lo necesario para que los pequeños descubran el amor de Dios a través del juego.',
+    desc: 'Diseñada para los niños que dan sus primeros pasos en la fe. Con espacio para 15 niños y 3 maestros, ofrece un ambiente cálido y estimulante a escala infantil, con todo lo necesario para que los pequeños descubran el amor de Dios a través del juego.',
   },
   {
     id: 'infantes',
@@ -74,7 +74,7 @@ export const SALAS: Sala[] = [
     img: '/images/renders/Sala priomarios.png',
     color: '#BFDBFE',
     iconColor: '#3B82F6',
-    desc: 'La sala con mayor capacidad del segundo piso, pensada para el grupo etario más numeroso. Los niños de primer ciclo básico cuentan con espacio para actividades grupales dinámicas, presentaciones, juegos y estudio bíblico activo.',
+    desc: 'Pensada para el grupo más numeroso de la iglesia. Los niños de primer ciclo básico cuentan aquí con espacio para actividades grupales dinámicas, presentaciones, juegos y estudio bíblico activo.',
   },
   {
     id: 'intermediarios',
@@ -102,11 +102,11 @@ export const SALAS: Sala[] = [
     img: '/images/renders/Imagen 2 - Sala Gteen.jpg',
     color: '#CCFBF1',
     iconColor: '#0D9488',
-    desc: 'La sala más grande del proyecto, pensada para los adolescentes de 13 a 15 años. Diseñada para fomentar la conexión entre pares, el liderazgo y la construcción de una identidad cristiana sólida durante los años más determinantes de la adolescencia temprana.',
+    desc: 'Un espacio amplio para los adolescentes de 13 a 15 años. Diseñada para fomentar la conexión entre pares, el liderazgo y la construcción de una identidad cristiana sólida durante los años más determinantes de la adolescencia temprana.',
   },
   {
     id: 'jovenes',
-    nombre: 'Sala deJóvenes',
+    nombre: 'Sala de Jóvenes',
     sub: 'Sala de Jóvenes',
     edad: '16 a 25 años',
     capacidad: 20,
@@ -116,7 +116,7 @@ export const SALAS: Sala[] = [
     img: '/images/renders/Sala jovenes.png',
     color: '#FED7AA',
     iconColor: '#EA580C',
-    desc: 'La sala de los jóvenes adultos es la más grande por superficie total. Cuenta con un panel acústico tipo acordeón que permite dividirla en dos ambientes independientes o unificarlos para actividades más grandes.',
+    desc: 'El espacio de los jóvenes adultos cuenta con un panel acústico tipo acordeón que permite dividirlo en dos ambientes independientes o unirlos para actividades más grandes.',
   },
 ];
 
@@ -160,7 +160,7 @@ export const SERVICE_ROOMS: ServiceRoom[] = [
 
 export const PROYECTO = {
   metaTotal: 49365960,
-  montoRecaudado: 12000000,
+  montoRecaudado: 24000000,
   costos: [
     {
       titulo: 'Estructura y accesos',
@@ -203,4 +203,5 @@ export const BANCO = {
   rut: '65.002.737-K',
   titular: 'Iglesia de Porvenir',
   correo: 'tesoreriaporvenir@hotmail.com',
+  asunto: 'Proyecto Nuevas Generaciones Porvenir',
 };

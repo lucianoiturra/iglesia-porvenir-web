@@ -124,7 +124,7 @@ export default function FloorPlan() {
         </div>
 
         <p className="text-xs text-[#94A3B8] mt-2 text-center">
-          Tocá cualquier recinto para ver sus detalles
+          Toca cualquier recinto para ver sus detalles
         </p>
       </div>
 
@@ -177,7 +177,7 @@ export default function FloorPlan() {
               <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth="1.5" />
               <path d="M3 9h18M9 21V9" strokeWidth="1.5" />
             </svg>
-            <p className="text-sm text-[#94A3B8]">Seleccioná un recinto en el plano para ver sus detalles</p>
+            <p className="text-sm text-[#94A3B8]">Selecciona un recinto en el plano para ver sus detalles</p>
           </div>
         )}
       </div>
