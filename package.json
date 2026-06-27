@@ -10,7 +10,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "optimize-images": "node scripts/optimize-renders.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^5.0.4",
@@ -27,5 +28,8 @@
     "tailwindcss": "^4.2.0",
     "yet-another-react-lightbox": "^3.31.0",
     "youtube-sr": "^4.3.12"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.2"
   }
 }
